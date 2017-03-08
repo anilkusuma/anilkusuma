@@ -509,7 +509,7 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	font-size: 24px;
 }
 .header .top .right-icons a {
-	margin-left: 12px;
+	margin-left: 20px;
 }
 .header .bottom {
 	background: #fff;
