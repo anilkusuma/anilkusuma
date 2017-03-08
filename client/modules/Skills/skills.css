@@ -1,0 +1,624 @@
+
+.autocomplete {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+.ac-users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.chip{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+}
+.chip i{
+    margin-left: 5px;
+}
+.ac-input{
+    width: 100%;
+}
+.ac-dropdown{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+}
+.ac-dropdown li > a {
+    color: black;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.usertype-select input {
+    padding-bottom: 5px !important;
+    border: none !important;
+}
+.usertype-select ul{
+    margin-top: 5px;
+}
+#AutoSuggestDropDown{
+    max-height: 350px;
+}
+.modalContentRow{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: overlay;
+    padding: 0px 15px !important;
+
+}
+
+.composeText {
+    color: white;
+    font-size: x-large;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+.modalContentRow .modalContentCol{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    
+}
+#showEventDetails .modalContentRow{
+    background-color: whitesmoke;
+}
+#showEventDetails .modalContentCol{
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: 4px;
+}
+.FooterButtons {
+    float: right;
+}
+.HeaderText {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+}
+.modalHeader {
+    background-color: #0277BD;
+}
+.model-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+}
+.sendbutton {
+    background-color:#4285f4;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+.sendbutton:hover{
+    background-color: #0865ff;
+}
+#startDate,#startTime,#endDate,#endTime{
+    background-color: transparent !important;
+    cursor: pointer !important;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: medium;
+    font-family: 'Cardo', serif;
+}
+
+#showEventDetails{
+    width: 60%;
+    height: auto;
+    max-height: auto;
+    display: none;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: white;
+}
+#createEventModal{
+    width: 80%;
+    height: 80%;
+    max-height: auto;
+    display: none;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: white;
+}
+#showEventDetails .modalContentRow{
+    padding: 20px 15px !important;
+}
+#showEventDetails .row{
+    margin:0px;
+}
+#showEventDetails .col{
+    padding: 0px;
+}
+
+.modalContentRow .row {
+    margin: 0px;
+    
+}
+.modalContentRow .input-field {
+    margin: 0px;
+}
+.modalContentRow .col{
+	padding: 0px;
+}
+
+.footerRow {
+    padding: 0px 15px !important;
+    margin-bottom: 10px !important ;
+    
+}
+.FooterButtons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.modalContentRow input {
+    margin-bottom: 0px;
+    width: 100%;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+.modalContentRow textarea {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+#eventName {
+    border-bottom: none;
+    box-shadow: none;
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#eventDescription{
+    border: 1px solid rgb(158, 158, 158) !important;
+}
+#eventName:focus {
+    box-shadow: none;
+}
+
+
+#to_event {
+    border-bottom:none;
+    box-shadow: none;
+}
+
+.to_event_field{
+    display: flex;
+    flex-direction: row;
+    border:none;
+    flex: 0 0 auto;
+}
+.addmorebutton:before,.deletemorebutton:before {
+    font-size: 30px;
+    cursor: pointer;
+}
+.addmorebutton, .deletemorebutton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+}
+.addmorebutton:hover,.deletemorebutton:hover{
+    color: #046cbf !important;
+}
+  
+.deletei:before{
+    font-size: 25px;
+}
+.deletei{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.deletei:hover{
+    color: #ff1100 !important;
+}
+
+.eventi {
+    margin-right: 8px;
+    font-size: 25px;
+}
+
+.closei{
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 0px;
+    
+}
+.closei:hover{
+    color: #ff6262 !important;
+}
+
+.closeimage {
+    margin-left: auto;
+}
+.user-select-div {
+
+}
+.toeventrow{
+    border-bottom: 1px solid #9e9e9e;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.user-select-div input{
+    margin-bottom: 0px !important;
+}
+#createEventModal .input-field{
+    margin-top: 0px;
+}
+#createEventModal .row{
+    margin: 0px;
+    padding: 0px;
+}
+
+#createEventModal .col{
+    margin: 0px;
+    padding: 0px;
+}
+.allDayLabel{
+	float: right;
+}
+
+.eventTabs{
+    height: auto !important;
+}
+.eventTabs .tab{
+    height: auto;
+    flex-grow: 0 !important;
+    -webkit-box-flex: 0 !important;
+    -webkit-flex-grow: 0 !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin: 5px;
+    line-height: inherit !important;
+    width: auto !important;
+    text-transform: none !important;
+    min-width: 0px !important;
+}
+.eventTabs .tab a{
+    display: flex;
+    flex-direction: column;
+    height: 75px;
+    width: 75px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: whitesmoke;
+
+}
+.eventsRow{
+    display: none;
+}
+.eventTabs .tab a:hover{
+    color: #606060;
+}
+.eventTabs .tab a i{
+    font-size: 25px;
+}
+.eventTabs .indicator{
+    display: none !important;
+}
+.eventTabContent{
+    margin-top: 20px;
+}
+.repeatActive .activeRepeat{
+    float: right;
+}
+.repeatTypeDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.repeatTypeDiv .repeatTypeSelect input{
+    margin-bottom: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+    width: 100px;
+}
+.repeatTypeDiv .repeatLabel{
+    font-size: medium;
+    font-family: 'Courgette', cursive;
+}
+.repeatTypeSelect{
+    margin-left: 20px;
+}
+.repeatTypeSelect ul li span{
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+.repeatEveryDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.repeatEveryDiv .repeatEverySelect input{
+    margin-bottom: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+    width: 100px;
+}
+.repeatEveryDiv .repeatEveryLabel{
+    font-size: medium;
+    font-family: 'Courgette', cursive;
+}
+.repeatEverySelect{
+    margin-left: 20px;
+}
+.repeatEverySelect ul li span{
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+.startsOnLabel{
+    font-size: medium;
+    font-family: 'Courgette', cursive;
+}
+.startsOnText{
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+    margin-left: 20px;
+}
+.summeryDivLabel{
+    font-size: medium;
+    font-family: 'Courgette', cursive;
+}
+.summeryDivText{
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+
+
+#startTime,#endTime,#startDate,#endDate{
+    background-color: transparent !important;
+    cursor: pointer !important;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: medium;
+    font-family: 'Cardo', serif;
+}
+#startTime label, #endTime label,#startDate label,#endDate label{
+    position: relative;
+}
+
+
+
+
+
+
+
+
+.eventTitleLabel{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+}
+.eventTitleText{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+
+.eventStartLabel{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+}
+.eventStartText{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+.eventEndTimeLabel{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+}
+.eventEndTimeText{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+.eventLocationLabel{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+}
+.eventLocationText{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+.eventDescriptionLabel{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+}
+.eventDescriptionText{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    margin-left: 20px;
+}
+
+
+.endsOnDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.endsOnDiv .endsOnSelect input{
+    margin-bottom: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+    width: 90px ;
+}
+.endsOnDiv .endOnLabel{
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+}
+.endsOnSelect{
+    margin-left: 20px;
+}
+.endsOnSelect ul li span{
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+.endsOnAfter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#afterNumber{
+    width: 50px;
+    border: 1px solid #9e9e9e !important;
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 10px;
+    height: 2rem;
+}
+.occurText{
+    margin-left: 10px;
+    font-family: 'Roboto Mono', monospace;
+}
+#endsDate{
+    background-color: white;
+    border: 1px solid #9e9e9e !important;
+    cursor: pointer;
+    text-align: center;
+}
+.endsOnDate{
+    margin-left: 15px;
+}
+.labelSpan{
+    width: 150px;
+    text-align: left;
+}
+#showEventDetails .labelSpan{
+    text-align: right;
+    font-family: 'Merriweather', serif;
+}
+.startsOn,.summeryDiv,.eventTitle,.eventStartTime,.eventEndTime,.eventLocation,.eventDescription{
+    display: flex;
+    flex-direction: row;
+}
+.summeryDiv{
+    margin-top: 10px;
+}
+.eventTitle,.eventStartTime,.eventEndTime,.eventLocation,.eventDescription{
+    margin-bottom: 10px;
+}
+.repeatEverySelect .dropdown-content{
+    max-height: 200px;
+}
+#EventsDisplay{
+    background-color: white;
+    padding: 20px;
+    border-radius: 2px;
+}
+#CalendarMain thead{
+    border-bottom: none !important;
+}
+ .fc td,  .fc th {
+     border-width: 1px !important; 
+}
+.fc-ltr .fc-list-item-marker {
+    padding-right: 14px !important;
+}
+.userEvent{
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px){
+    #CalendarMain .fc-scroller{
+        height: auto !important;
+    }
+    .fc td,  .fc th {
+        border-width: 0px !important; 
+    }
+    .FooterButtons{
+        display: flex;
+        flex-direction: row;
+    }
+    .FooterButtons .note-toolbar{
+        /*display: flex;
+        flex-direction: column;
+        padding: 10px 0px 0px 0px !important;*/
+        display: none;
+    }
+    .FooterButtons .note-toolbar .note-edit{
+        margin-left: 0px !important;
+    }
+    .FooterButtons .delimage{
+        /*margin-left: 0px;
+        border-left: #c1c0c0 solid 1px;*/
+        display: none;
+    }
+    .FooterButtons .sendbutton{
+        margin-right: auto;
+    }
+    .fc-toolbar .fc-left,.fc-toolbar .fc-right,.fc-toolbar .fc-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .fc-toolbar .fc-left{
+        float: none;
+    }
+    .fc-toolbar .fc-right{
+        float: none;
+    }
+    .fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+        float: none;
+        width: 100%;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fc-ltr .fc-basic-view .fc-day-top {
+        height: 3em;
+    }
+    .fc-basic-view .fc-body .fc-row,.fc-basic-view .fc-body .fc-row .fc-content-skeleton {
+        min-height: 3em;
+    }
+    .fc-content-skeleton tbody{
+        display: none;
+    }
+    /*.fc-content-skeleton table thead tr td{
+        display: flex;
+    }*/
+/*    .fc-basic-view .fc-body .fc-row .fc-content-skeleton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }*/
+    #createEventModal .model-content{
+        display: flex;
+    }
+    #createEventModal{
+        max-height: 100% ;
+        height: 100%;
+        width: 100%;
+        top: 0% !important;
+    }
+    #showEventDetails{
+        max-height: 100% ;
+        height: 100%;
+        width: 100%;
+        top: 0% !important;
+    }
+    .toeventrow{
+        display: block;
+    }
+    .autocomplete{
+        padding-left: 0px;
+    }
+ 
+}

@@ -47,6 +47,11 @@
            "params": "$!../client/"
         }
     },
+    "files:after": {
+        "./middleware/serverindex":{
+              "enabled": true
+        }
+    },
     "final": {
         "loopback#urlNotFound": {}
     },

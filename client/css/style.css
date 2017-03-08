@@ -35,14 +35,24 @@ html, body {
 	overflow-x: hidden;
 }
 body {
-	background: #f5f5f5;
+	background: rgba(185, 185, 185, 0.16);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 14px;
-	line-height: 24px;
-	color: #666;
-	font-family: 'Roboto', sans-serif;
+    line-height: 27px;
+    color: #3a3a3a;
+    font-family: 'Merriweather','serif';
 	font-weight: 400;
+	min-height: 100vh
 }
-p {
+#main{
+	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+p{
 	margin-bottom: 24px;
 }
 blockquote {
@@ -93,6 +103,7 @@ a {
 	transition: .25s;
 	outline: none !important;
 	color: #7e50ff;
+	cursor: pointer;
 }
 a:hover {
 	color: #7e50ff;
@@ -192,7 +203,28 @@ h3.small-margin-bottom {
 	height: 426px;
 	margin-top: 72px;
 }
-
+.errorName .error{
+	font-size: x-small;
+    color: #be0000;
+}
+.contact-loading{
+	text-align: center;
+	margin-top: 50px;
+}
+.contact-loading .message{
+	font-size: large;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+.contact-loading .message.INITIATED{
+	color: #4200f9;
+}
+.contact-loading .message.SUCCESS{
+	color: #0e5f0e;
+}
+.contact-loading .message.FAILED{
+	color: #ab1313;
+}
 /* ==========================================================================
    02. Buttons
    ========================================================================== */
@@ -392,6 +424,9 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 }
 .circle-progress-wrapper {
 	margin-bottom: 24px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 .circle-progress {
 	display: inline-block;
@@ -417,8 +452,9 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	left: 0;
 }
 .circle-progress-label-wrapper {
-	margin-left: 240px;
-	height: 200px;
+	display: flex;
+    justify-content: center;
+    padding-top: 25px;
 }
 .circle-progress-label {
 	text-transform: uppercase;
@@ -427,11 +463,6 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	line-height: 26px;
 	margin-bottom: 0;
 	color: #232323;
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
 }
 @media all and (max-width: 768px) {
 	.circle-progress {
@@ -441,12 +472,6 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 		margin-left: 0;
 		height: auto;
 		margin-top: 12px;
-	}
-	.circle-progress-label {
-		top: auto;
-		-webkit-transform: translateY(0);
-		-ms-transform: translateY(0);
-		transform: translateY(0);
 	}
 }
 
@@ -637,7 +662,7 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 }
 .slide-out-popup {
 	top: 54px;
-	right: 41px;
+	right: 5px;
 }
 .popup:before, .slide-out-popup:before {
 	content: '';
@@ -841,6 +866,9 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 /* ==========================================================================
    07. Footer
    ========================================================================== */
+.footerdivs{
+	margin-top: auto;
+}
 .footer {
 	text-align: center;
 	color: #fff;
@@ -910,7 +938,7 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	transition: .5s;
 }
 .sections-wrapper > section {
-	width: 1600px;
+	width: 100%;
 	height: auto;
 	float: left;
 	padding: 72px 12px;
@@ -922,8 +950,13 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	padding-bottom: 72px;
 }
 .section-img {
-	max-height: 650px;
-	margin: 0 auto;
+	max-height: 250px;
+	margin: 0 auto 150px auto;
+	border-radius: 50%;
+}
+.about-image{
+    max-height: 350px;
+    border-radius: 25%
 }
 .vertical-center {
 	display: table-cell;
@@ -999,7 +1032,7 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	border-bottom: 2px dashed #232323;
 	position: relative;
 	margin: 0 18px;
-	padding-bottom: 12px;
+	padding-bottom: 35px;
 	margin-bottom: 24px;
 }
 .signature:before {
@@ -1343,7 +1376,7 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 }
 .education .item:nth-child(even) .content {
 	top: auto;
-	bottom: -132px;
+	bottom: -160px;
 }
 .education .item .content:after {
 	content: '';
@@ -1393,7 +1426,7 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 	top: -44px;
 	bottom: auto;
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 1000px) {
 	.education {
 		position: relative;
 		padding: 0;
@@ -1535,6 +1568,8 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 .portfolio .item img {
 	width: 100%;
 	height: auto;
+	border-radius: 5px;
+    box-shadow: 8px 2px 17px 1px rgba(0, 0, 0, 0.15), 0px 5px 15px 4px rgba(0, 0, 0, 0.15);
 }
 .portfolio .item .overlay {
 	width: 100%;
@@ -1638,6 +1673,9 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 }
 .portfolio-slider {
 	margin-bottom: 24px;
+	max-height: 400px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.25);
+	overflow: overlay;
 }
 .portfolio-slider.owl-theme .owl-nav [class*='owl-'] {
 	padding: 0;
@@ -1669,6 +1707,9 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 }
 .portfolio-slider.owl-carousel .owl-controls .owl-nav .owl-next {
 	right: 0;
+}
+.related-images img{
+	box-shadow: 0 2px 4px rgba(0,0,0,.25);
 }
 @media all and (max-width: 768px) {
 	.portfolio-button-row {
@@ -2070,3 +2111,75 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 		line-height: 120px;
 	}
 }
+
+
+
+/* Preloader
+   ========================================================================== */
+
+@-webkit-keyframes preloadera{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes preloadera{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+.preloader{
+	position: relative;
+	width: 80px;
+	height: 80px;
+
+	border-radius: 50px;
+	background-color: rgba(255, 255, 255, .2);
+	border-width: 40px;
+	border-style: double;
+	border-color:rgba(0, 0, 0, 0)  #7c4dff;
+
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+
+	-webkit-transform-origin:  50% 50%;
+	transform-origin:  50% 50% ;
+	-webkit-animation: preloadera 2s linear infinite;
+	animation: preloadera 2s linear infinite;
+	
+}
+
+
+
+/* Track */
+::-webkit-scrollbar{ /* 1 */
+  width: 5px;
+}
+::-webkit-scrollbar-button{ /* 2 */ 
+  display: none;
+}
+::-webkit-scrollbar-track{ /* 3 */
+  display: none;
+}
+::-webkit-scrollbar-track-piece{ /* 4 */ 
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{ /* 5 */ 
+    display: block;
+    background-color: #d8d8d8;
+}
+::-webkit-scrollbar-corner{ /* 6 */ 
+  display: none;
+}
+::-webkit-resizer{
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    ::-webkit-scrollbar{ /* 1 */
+        width: 2px;
+    }
+}
+   

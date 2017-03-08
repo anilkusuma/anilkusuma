@@ -1,0 +1,1207 @@
+#CreateFees .feeDetails{
+	padding: 15px;
+}
+#CreateFees .row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	margin-bottom: 15px !important;
+}
+
+#CreateFees .fee-due-date,#CreateFees .term-due-date{
+	position: relative;
+}
+#CreateFees #feeDueDate,#CreateFees .term-due-date input{
+	background-color: white;
+	cursor: pointer;
+}
+
+#CreateFees .checkboxDiv{
+	text-align: right;
+    margin-bottom: 10px;
+}
+
+#CreateFees .AddTermButton{
+	text-align: right;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#CreateFees .addiscount{
+	padding:0px 15px ;
+	font-weight: 600;
+	font-family: 'Merriweather', serif;
+	background-color: white;
+    color: #006d79;
+}
+#CreateFees .addiscount:hover{
+	background-color: #18d7ec;
+    color: black;
+    box-shadow: none !important;
+}
+#CreateFees .addterm,#CreateFees .addcat{
+	padding:0px 15px ;
+	font-weight: 600;
+	font-family: 'Merriweather', serif;
+	background-color: #18d7ec;
+    color: black;
+}
+
+#CreateFees .addterm:hover,#CreateFees .addcat:hover{
+	background-color: white;
+    color: #006d79;
+    box-shadow: none !important;
+}
+
+#CreateFees input{
+	margin-bottom: 0px !important;
+}
+
+#CreateFees .helpi{
+	cursor: pointer;
+}
+
+#CreateFees .termsRepeat{
+	padding: 15px;
+}
+
+#CreateFees .deleteimage{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#CreateFees .deleteimage i{
+	font-size: 20px;
+}
+
+#CreateFees .category-details{
+	display: flex;
+	justify-content: flex-end;
+}
+
+#CreateFees .category-details .catnamefield{
+	margin-right: 10px;
+}
+#CreateFees .AddCategoryButton{
+	text-align: right;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#CreateFees .deletecat{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.dateCol{
+	margin-top: 15px;
+}
+.dateCol label{
+	position: absolute;
+	top: -10px;
+}
+
+#CreateFees .autocomplete {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#CreateFees .ac-users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#CreateFees .chip{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+    overflow: hidden;
+}
+#CreateFees .ac-input{
+    width: 100%;
+}
+#CreateFees .ac-input input{
+	border-bottom: none !important;
+	box-shadow: none !important;
+}
+#CreateFees .ac-dropdown{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+}
+#CreateFees .ac-dropdown li{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f3f3f3;
+}
+#CreateFees .ac-dropdown li a {
+    color: black;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#CreateFees .ac-dropdown li .inputname{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+#CreateFees .save-fees-button{
+	background-color: #3c3cff !important;
+}
+/*
+#CreateFees
+
+#CreateFees
+*/
+
+@media only screen and (max-width: 601px){
+    #CreateFees .feeDueDateCol{
+        margin-top: 30px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#EditTemplate .feeDetails{
+	padding: 15px;
+}
+#EditTemplate .row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	margin-bottom: 15px !important;
+}
+
+#EditTemplate .fee-due-date,#EditTemplate .term-due-date{
+	position: relative;
+}
+#EditTemplate #feeDueDate,#EditTemplate .term-due-date input{
+	background-color: white;
+	cursor: pointer;
+}
+
+#EditTemplate .checkboxDiv{
+	text-align: right;
+    margin-bottom: 10px;
+}
+
+#EditTemplate .AddTermButton{
+	text-align: right;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#EditTemplate .addterm,#EditTemplate .addcat,#EditTemplate .addiscount{
+	padding:0px 15px ;
+	font-weight: 600;
+	font-family: 'Merriweather', serif;
+	background-color: #18d7ec;
+    color: black;
+}
+
+#EditTemplate .addterm:hover,#EditTemplate .addcat:hover{
+	background-color: white;
+    color: #006d79;
+    box-shadow: none !important;
+}
+
+#EditTemplate input{
+	margin-bottom: 0px !important;
+}
+
+#EditTemplate .helpi{
+	cursor: pointer;
+}
+
+#EditTemplate .termsRepeat{
+	padding: 15px;
+}
+
+#EditTemplate .deleteimage{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#EditTemplate .deleteimage i{
+	font-size: 20px;
+}
+
+#EditTemplate .category-details{
+	display: flex;
+	justify-content: flex-end;
+}
+
+#EditTemplate .category-details .catnamefield{
+	margin-right: 10px;
+}
+#EditTemplate .AddCategoryButton{
+	text-align: right;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#EditTemplate .deletecat{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.dateCol{
+	margin-top: 15px;
+}
+.dateCol label{
+	position: absolute;
+	top: -10px;
+}
+
+#EditTemplate .autocomplete {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#EditTemplate .ac-users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#EditTemplate .chip{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+    overflow: hidden;
+}
+#EditTemplate .ac-input{
+    width: 100%;
+}
+#EditTemplate .ac-input input{
+	border-bottom: none !important;
+	box-shadow: none !important;
+}
+#EditTemplate .ac-dropdown{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+}
+#EditTemplate .ac-dropdown li{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f3f3f3;
+}
+#EditTemplate .ac-dropdown li a {
+    color: black;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#EditTemplate .ac-dropdown li .inputname{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+#EditTemplate .save-fees-button{
+	background-color: #3c3cff !important;
+}
+/*
+#CreateFees
+
+#CreateFees
+*/
+
+@media only screen and (max-width: 601px){
+    #EditTemplate .feeDueDateCol{
+        margin-top: 30px;
+    }
+    
+}
+
+
+#AdminFees .bookmars{
+	background-color: whitesmoke;
+	border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 40px;
+	margin-left: 5px;
+	margin-right: 5px;
+	transition: all 250ms ease-in;
+	box-shadow: none ;
+}
+#AdminFees .bookmars:hover{
+	background-color:  #ffea43;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#AdminFees .fees{
+	padding: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#AdminFees .bookmarktext{
+	font-weight: 600;
+    font-size: larger;
+    font-family: 'Cardo', serif;
+    transition: all 250ms ease-in;
+}
+
+
+#AdminFees .bookmark-image i{
+	font-size: 100px;
+    color: #ffea43;
+    transition: all 250ms ease-in;
+}
+#AdminFees .bookmars:hover .bookmark-image i{
+	color:white;
+}
+
+
+#AdminFees .FeesList{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+#AdminFees .feeNameDiv{
+	display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+
+#AdminFees .feeName{
+	font-size: x-large;
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+
+#AdminFees .description{
+	color: grey;
+    font-family: me;
+    font-size: medium;
+    text-align: left;
+}
+
+#AdminFees .classNameDiv,#AdminFees .feeAmountDiv,#AdminFees .feeDueDateDiv{
+	text-align: right;
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+#FeeDetails .switch label .lever {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 10px;
+    background-color: #818181;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+#FeeDetails .switch label .lever:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #F1F1F1;
+    border-radius: 21px;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+    left: -5px;
+    top: -3px;
+    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+#FeeDetails .switch label input[type=checkbox]:checked + .lever:after {
+    left: 15px;
+}
+
+#FeeDetails .switch label input[type=checkbox]:checked + .lever:after {
+    background-color: #26a69a;
+}
+#FeeDetails .switch label input[type=checkbox]:checked + .lever {
+    background-color: #84c7c1;
+}
+#FeeDetails .feeStatusDiv{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+#FeeDetails .historyHeading{
+    padding: 25px 25px 0px 25px;
+}
+#FeeDetails .historyHeading .heading{
+    font-family: 'Cardo', serif;
+    font-size: xx-large;
+    font-weight: 600;
+}
+#FeeDetails .historyHeading .filterRow{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+#FeeDetails .historyDiv{
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+     justify-content: center; 
+    /*align-items: center;*/
+}
+#FeeDetails .historyDiv .history{
+    padding: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+#FeeDetails .historyDiv .studentName{
+    display: flex;
+    flex-direction: column;
+}
+#FeeDetails .historyDiv .studentName .details{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#FeeDetails .historyDiv .studentName .details span{
+    text-align: right;
+    font-weight: 100 !important;
+    font-size: smaller;
+    color: #777777;
+}
+
+#FeeDetails .historyDiv .transactionIdDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#FeeDetails .historyDiv .transactionIdDiv .payUref,#FeeDetails .historyDiv .transactionIdDiv .bankRef{
+    font-size: smaller;
+    font-weight: 100;
+    color: #6b6b6b;
+    text-align: right;
+}
+
+#FeeDetails .historyDiv .amountDiv{
+    margin-top: 30px;
+    text-align: center;
+}
+/*
+#FeeDetails .historyDiv
+
+
+
+#FeeDetails .historyDiv
+
+#FeeDetails .historyDiv
+
+
+#FeeDetails .historyDiv*/
+#FeeDetails .historyDiv .history.success{
+    background-color: rgba(186, 255, 186, 0.1);
+}
+#FeeDetails .historyDiv .history.failure{
+    background-color: rgba(255, 148, 148, 0.1);
+}
+#FeeDetails .historyDiv .history div span{
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: 500;
+}
+#FeeDetails .historyDiv .history .statusDiv{
+    padding-top: 10px;
+    text-align: center;
+}
+#FeeDetails .historyDiv .history .statusDiv span{
+    font-size: medium;
+    text-transform: UPPERCASE;
+}
+#FeeDetails .historyDiv .history .statusDiv span.success{
+    color: green;
+}
+#FeeDetails .historyDiv .history .statusDiv span.failure{
+    color: red;
+}
+#FeeDetails .historyDiv .history .reasonDiv{
+    display: flex;
+}
+#FeeDetails .historyDiv .history .reason{
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
+    width: 200px;
+    font-size: smaller;
+    margin-top: 25px;
+    color: grey;
+    text-align: center;
+}
+#FeeDetails .fees{
+    padding: 25px;
+}
+#FeeDetails .fees .feeName{
+    font-family: 'Cardo', serif;
+    font-size: xx-large;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+#FeeDetails .fees .feeNameDiv{
+    text-align: center;
+}
+#FeeDetails .fees .feeAmountDiv,#FeeDetails .fees .feePaidDiv,#FeeDetails .fees .dueAmountDiv{
+    text-align: right;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+#FeeDetails .fees .feeDueDateDiv{
+    text-align: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+#FeeDetails .fees .feePaidDiv{
+    padding-top: 15px;
+}
+#FeeDetails .fees .feeDescDiv{
+    text-align: left;
+    padding-bottom: 15px;
+    max-width: 50%
+}
+#FeeDetails .fees .feeDescDiv span{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    font-weight: 500;
+    color: #656565;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+#FeeDetails .fees .feeDueDateDiv span,#FeeDetails .fees .feeAmountDiv span,#FeeDetails .fees .feePaidDiv span,#FeeDetails .fees .dueAmountDiv span{
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: 500;
+}
+#FeeDetails .fees .fee-paying-row {
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#FeeDetails .fees .fee-paying-row .payNowButton{
+    margin-right: 30px;
+}
+#FeeDetails .fees .fee-paying-row .payNowButton a{
+    padding: 0px 15px;
+    font-weight: 600;
+}
+#FeeDetails  .errorNamePayingFeeAmount .error{
+    top: 0px !important;
+    position: relative;
+}
+
+.terms{
+    padding: 20px;
+}
+.term{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #a2a2a2;
+}
+.termNameDiv{
+    padding-bottom: 10px;
+}
+.termName{
+    font-family: 'Merriweather', serif;
+    font-size: x-large;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+.feeDueDateDiv{
+    text-align: left;
+    margin-bottom: 5px;
+}
+.feeDueDateDiv span{
+    font-family: 'Merriweather', serif;
+    font-size: medium;
+    font-weight: 500;
+}
+.categories{
+    text-align: right;
+}
+.catDiv span{
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: 500;
+    color: #3a3a3a;
+}
+.feeAmountDiv{
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.feeAmountDiv{
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: 500;
+}
+.termDiv{
+    transition: height 0.5s ease-in;
+}
+.categories .cat{
+    transition: height 0.5s ease-in;
+}
+#FeeDetails .OffeDiscountButton{
+    text-align: right;
+    margin-top: 40px;
+}
+
+#FeeDetails .addiscount{
+    padding:0px 15px ;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+    background-color: white;
+    color: #006d79;
+}
+#FeeDetails .addiscount:hover{
+    background-color: #18d7ec;
+    color: black;
+    box-shadow: none !important;
+}
+
+#FeeDetails .modalContentRow .modalContentCol{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    margin-top: 20px;
+}
+#FeeDetails .FooterButtons {
+    float: left;
+}
+#FeeDetails .HeaderText {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+}
+#FeeDetails .modalHeader {
+    background-color: #0277BD;
+}
+#FeeDetails .model-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+}
+#FeeDetails .sendbutton {
+    background-color:#4285f4;
+    font-weight: 600;
+    margin-left: 15px;
+}
+#FeeDetails  .addbutton{
+    font-weight: 600;
+}
+#FeeDetails .sendbutton:hover{
+    background-color: #0865ff;
+}
+
+#FeeDetails #DiscountModel{
+    width: 80%;
+    height: 80%;
+    max-height: 80%;
+    display: none;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: white;
+}
+
+#FeeDetails .modalContentRow .row {
+    margin-bottom: 0px;
+    
+}
+#FeeDetails .modalContentRow .input-field {
+    margin-top: 0px;
+}
+
+#FeeDetails .footerRow {
+    padding: 0px 15px !important;
+    margin-bottom: 10px !important ;
+    
+}
+#FeeDetails .FooterButtons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+#FeeDetails .composeText {
+    color: white;
+    font-size: x-large;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+#FeeDetails .maili {
+    margin-right: 10px;
+    font-size: 20px;
+}
+#FeeDetails .mailimage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#FeeDetails .deletediscountstudent .deletei{
+    font-size: 20px;
+    cursor: pointer;
+}
+#FeeDetails .closei{
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 0px;   
+}
+#FeeDetails .closeimage {
+    margin-left: auto;
+}
+#FeeDetails #DiscountModel .autocomplete {
+    padding-bottom: 0px;
+}
+#FeeDetails #DiscountModel .ac-input{
+    width: 100%;
+}
+#FeeDetails .toDiscountStudentRow{
+    display: flex;
+}
+#FeeDetails .modalContentRow{
+    display: flex;
+    flex: 1 0 auto;
+}
+#FeeDetails .row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 15px !important;
+}
+#FeeDetails input{
+    margin-bottom: 0px !important;
+}
+#FeeDetails .autocomplete {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#FeeDetails .ac-users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 7px;
+}
+#FeeDetails .chip{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+    overflow: hidden;
+}
+#FeeDetails .ac-input{
+    width: 100%;
+}
+#FeeDetails .ac-input input{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+#FeeDetails .ac-dropdown{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+    max-height: 300px;
+}
+#FeeDetails .ac-dropdown li{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f3f3f3;
+}
+#FeeDetails .ac-dropdown li a {
+    color: black;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#FeeDetails .ac-dropdown li .inputname{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+#FeeDetails .heading{
+    font-family: 'Cardo', serif;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+#FeeDetails .studentDiscountsList{
+    padding-top: 15px;
+}
+#FeeDetails .studentDiscountsList .autocomplete{
+    border-bottom: 1px dotted #bdbdbd;
+}
+
+#FeeDetails .autocomplete {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#FeeDetails .ac-users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#FeeDetails .chip{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+}
+#FeeDetails .ac-input{
+    width: 100%;
+}
+#FeeDetails .ac-input input{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+#FeeDetails .ac-dropdown{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+}
+#FeeDetails .ac-dropdown li{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f3f3f3;
+}
+#FeeDetails .ac-dropdown li a {
+    color: black;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#FeeDetails .ac-dropdown li .inputname{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+#FeeDetails .toAddBankPaymentRow{
+    display: flex;
+    flex-direction: row;
+    padding-top: 70px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+#FeeDetails .ConfirmationModel {
+    border-radius: 15px;
+}
+#FeeDetails .ConfirmationModel .model-content{
+    padding: 30px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+#FeeDetails .ConfirmationModel .yesnorow{
+    padding-top: 30px;
+    text-align: right;
+}
+
+#FeeDetails .ConfirmationModel .deleteText{
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: 500;
+}
+
+#FeeDetails .ConfirmationModel .yesnorow a{
+    font-weight: 600;
+}
+#FeeDetails .ConfirmationModel .yesnorow .ConfirmButton{
+    background-color: white;
+    color: #ff4040;
+}
+#FeeDetails .ConfirmationModel .yesnorow .ConfirmButton:hover{
+    background-color: #ff4040;
+    color: black;
+}
+#FeeDetails .ConfirmationModel .yesnorow .cancelButton{
+    background-color: white;
+    color: #6ef76e;
+}
+#FeeDetails .ConfirmationModel .yesnorow .cancelButton:hover{
+    background-color: #6ef76e;
+    color: black;
+}
+#FeeDetails .ConfirmationModel .row {
+    margin : 0px !important;
+}
+#FeeDetails .partialPayment{
+    font-size: small;
+    color: grey;    
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+}
+#FeeDetails .partialPaymentDiv{
+    margin:0px !important;
+    position: relative;
+    top:-10px;
+    text-align: right;
+}
+
+
+
+
+
+
+
+#AdminTemplates .FeesList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#AdminTemplates .bookmars{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 250ms ease-in;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+#AdminTemplates .bookmarkname{
+    padding-top: 20px;
+    text-align: center;
+}
+#AdminTemplates .bookmars:hover{
+    background-color:  #e6d12e;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#AdminTemplates .bookmarktext{
+    font-weight: 600;
+    font-size: larger;
+    font-family: 'Cardo', serif;
+    transition: all 250ms ease-in;
+}
+#AdminTemplates .bookmark-image i{
+    font-size: 100px;
+    color: #e6d12e;
+    transition: all 250ms ease-in;
+}
+#AdminTemplates .bookmark-image{
+    text-align: center;
+}
+#AdminTemplates .bookmars:hover .bookmark-image i{
+    color:white;
+}
+#AdminTemplates .deletButton a{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+#AdminTemplates .deletButton a i{
+    font-size: 1.2rem;
+    line-height: 25px;
+}
+#AdminTemplates .bookmarkDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ribbon-wrapper-green {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+
+.ribbon-green {
+    font: bold 15px Sans-Serif;
+    font-family: 'Merriweather','serif';
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform:    rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    -o-transform:      rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #ccbe5e;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#ccbe5e)); 
+    background-image: -webkit-linear-gradient(top, #fefefe, #ccbe5e); 
+    background-image:    -moz-linear-gradient(top, #fefefe, #ccbe5e); 
+    background-image:     -ms-linear-gradient(top, #fefefe, #ccbe5e); 
+    background-image:      -o-linear-gradient(top, #fefefe, #ccbe5e); 
+    color: #6a6340;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green:before, .ribbon-green:after {
+    content: "";
+    border-top:   3px solid #6e8900;   
+    border-left:  3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+}
+
+.ribbon-green:before {
+    left: 0;
+}
+.ribbon-green:after {
+    right: 0;
+}​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1600px) {
+    #AdminFees .fees {
+        width: 19%;
+    }
+}
+@media screen and (min-width: 1290px) and (max-width: 1600px)  {
+    #AdminFees .fees {
+        width: 19%;
+    }
+}
+@media screen and (min-width: 790px) and (max-width: 1290px)  {
+    #AdminFees .fees {
+        width: 23.5%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 790px) {
+    #AdminFees .fees {
+        width: 46.5%;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 450px) {
+    #AdminFees .fees {
+        width: 45%;
+    }
+}
+@media screen and  (max-width: 400px) {
+    #AdminFees .fees {
+        width: 100%;
+    }
+}
+
+
+@media screen and  (max-width: 601px) {
+    #FeeDetails .fees .feeDescDiv{
+        max-width: 80%;
+    }
+    #FeeDetails #DiscountModel{
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        top:0%;
+    }
+}
+
+
+
+#AdminFees
+
+#AdminFees
+
+#AdminFees
+
+#AdminFees
+
+#AdminFees
+
+#AdminFees
+
+#AdminFees
+
+#AdminFees

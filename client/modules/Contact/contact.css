@@ -1,0 +1,970 @@
+#viewFilePreview{
+    width: 100% ;
+    height: 100% ;
+    top: 0 !important;
+    max-height: 100%;
+    background: transparent;
+}
+#viewFilePreview .model-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+#viewFilePreview .google-document-viewer-iframe{
+    width: 80%;
+    height: 100%;
+}
+#viewFilePreview iframe{
+    width: 100%;
+    height: 100%;
+}
+#viewFilePreview .toolbarContents{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.65) 0%,transparent 100%);
+
+}
+#viewFilePreview .backButton{
+    cursor: pointer;
+}
+#viewFilePreview .imageName{
+    color: white;
+    font-weight: 600;
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#viewFilePreview .downloadbutton{
+    margin-left: auto;
+    cursor: pointer;
+}
+#viewFilePreview .downloadbutton i{
+    font-size: 25px;
+    color: white;
+}
+#viewFilePreview .openedImageAttachemen{
+    max-height: 70%;
+    width: auto;
+    min-width: 50%;
+    height: auto;
+    max-width: 80%;
+}
+#InboxMain .note-editor.note-frame .note-editing-area {
+    height: 100%;
+}
+#InboxMain .note-editor.note-frame{
+    border : 0px;
+    height: 100%;
+}
+#InboxMain .note-statusbar{
+    display: none;
+}
+#InboxMain .note-toolbar {
+    display: flex;
+    flex-direction: row;
+}
+#InboxMain .note-btn-group .btn {
+    background-color: transparent;
+    box-shadow: none;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#InboxMain .note-btn-group .btn i {
+    color: #929090;
+    font-size: 14.5px;
+}
+
+#InboxMain .note-btn-group .btn span {
+    color: #929090;
+    font-size: 14.5px;
+}
+#InboxMain .note-alignment {
+    display: flex;
+    flex-direction: row;
+}
+#InboxMain .note-btn-group .btn.active {
+    background-color: #f3f2f2; 
+}
+#InboxMain .note-btn-group{
+    margin-top: 0px  !important;
+    margin-bottom: 0px !important;
+}
+#InboxMain .note-toolbar{
+    padding: 0px !important;
+}
+#InboxMain .note-edit, .note-style , .note-alignment {
+    margin-right: 5px !important;
+    margin-left: 20px !important;
+    padding: 0px 10px;
+    border-left: #c1c0c0 solid 1px;
+}
+#InboxMain .note-style ,.note-alignment{
+    margin-left: 0px !important;
+}
+
+#InboxMain .note-toolbar button i:hover {
+    color: black;
+}
+
+#InboxMain .note-editor.note-frame .note-editing-area .note-editable {
+    padding: 0px;
+    background-color: white;
+    height: 100%;
+}
+
+
+#InboxMain .chip i {
+    margin-left: 5px;
+}
+
+
+
+#InboxMain .file:hover .cancelAttachment{
+    opacity: 1;
+}
+#InboxMain .cancelAttachment{
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 18px;
+    opacity: 0;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 18px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+#InboxMain .filesRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+#InboxMain .file-attach{
+    color: #929090;
+    font-size: 20px;
+    line-height: inherit;
+    margin-top: 3px;
+    cursor: pointer;
+    padding-left: 5px;
+    border-left: 1px solid #c1c0c0;
+}
+#InboxMain .file-attach:hover{
+    color: black;
+}
+#InboxMain .file{
+    box-shadow: 0 0 1px rgba(0,0,0,.11),0 1px 2px rgba(0,0,0,.22);
+    box-sizing: border-box;
+    height: 88px;
+    padding: 12px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 132px;
+    z-index: 0;
+    border-radius: 2px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 5px 5px;
+    background-color: #f1f1f1;
+}
+#InboxMain .filename{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 17px;
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: normal;
+    color: #212121;
+    height: 3em;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 82.25%;
+}
+#InboxMain .fileType{
+    color: #757575;
+    line-height: 16px;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#InboxMain .fileTypeImage{
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    height: 16px;
+    width: 16px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+}
+#InboxMain .fileTypeText{
+    color: #757575;
+    line-height: 16px;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#InboxMain .readStatusY .contentD span{
+    font-weight: 400;
+}
+#InboxMain .readStatusN .contentD span{
+    font-weight: 600;
+}
+
+
+
+
+
+#InboxMain .ContentOfMail{
+    color: #777;
+}
+
+#InboxMain .MailBoxTable{
+    table-layout: fixed;
+}
+#InboxMain .MailBoxDiv{
+    overflow: hidden;
+    padding: 0px 15px;
+}
+#InboxMain .MailFromCol{
+    width: 15%;
+}
+#InboxMain .ContentCol{
+    width: 80%;
+}
+#InboxMain .contentColDiv {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#InboxMain .fromUserColDiv {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#InboxMain .autocomplete {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+#InboxMain .ac-users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#InboxMain .chip{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+}
+#InboxMain .ac-input{
+    width: 100%;
+}
+#InboxMain .ac-dropdown{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+}
+#InboxMain .ac-dropdown li{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f3f3f3;
+}
+#InboxMain .ac-dropdown li a {
+    color: black;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#InboxMain .ac-dropdown li .inputname{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+#InboxMain .usertype-select input {
+    padding-bottom: 5px !important;
+    border: none !important;
+}
+#InboxMain .usertype-select ul{
+    margin-top: 5px;
+}
+#InboxMain #AutoSuggestDropDown{
+    max-height: 350px;
+}
+
+#InboxMain .mailcontent .note-editor.note-frame .note-editing-area .note-editable {
+    min-height: 0px;
+    background-color: white;
+    height: auto;
+}
+
+#InboxMain .mailcontent .note-editor.note-frame .note-editing-area .note-editable p{
+     padding: 0px;
+}
+
+#InboxMain .modalContentRow{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: overlay;
+    padding: 0px 15px !important;
+}
+
+#InboxMain .composeText {
+    color: white;
+    font-size: x-large;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+#InboxMain .summernoteRow{
+    flex: 1 0 auto;
+    display: flex;
+}
+#InboxMain .summernoteRow .input-field{
+    flex: 1 0 auto;
+}
+#InboxMain .note-placeholder {
+    color: rgba(193, 193, 193, 0.77);
+    display: block ;
+}
+
+#InboxMain .modalContentRow .modalContentCol{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+#InboxMain .FooterButtons {
+    float: left;
+}
+#InboxMain .HeaderText {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+}
+#InboxMain .modalHeader {
+    background-color: #0277BD;
+}
+#InboxMain .model-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+}
+/*.sendbutton {
+    background-color:#26733a;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+.sendbutton:hover{
+    background-color: #41b55f;
+}*/
+#InboxMain .sendbutton {
+    background-color:#4285f4;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+#InboxMain .sendbutton:hover{
+    background-color: #0865ff;
+}
+
+#createMailModel{
+    width: 80%;
+    height: 80%;
+    max-height: 80%;
+    display: none;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: white;
+}
+
+#InboxMain .modalContentRow .row {
+    margin-bottom: 0px;
+    
+}
+#InboxMain .modalContentRow .input-field {
+    margin-top: 0px;
+}
+
+#InboxMain .footerRow {
+    padding: 0px 15px !important;
+    margin-bottom: 10px !important ;
+    
+}
+#InboxMain .FooterButtons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#InboxMain .modalContentRow input {
+    margin-bottom: 0px;
+    width: 100%;
+    border-bottom: none;
+    box-shadow: none;
+}
+#InboxMain .modalContentRow textarea {
+    border-bottom: none;
+}
+#InboxMain #subject {
+    border-bottom: none;
+    box-shadow: none;
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#InboxMain #compose {
+    border-bottom: none;
+    min-height: 100vh;
+}
+#InboxMain #subject:focus {
+    box-shadow: none;
+}
+
+#InboxMain #compose:focus {
+    border-bottom:none;
+    box-shadow: none;
+}
+
+#InboxMain #to_email {
+    border-bottom:none;
+    box-shadow: none;
+}
+
+#InboxMain .to_email_field{
+    display: flex;
+    flex-direction: row;
+    border:none;
+    flex: 0 0 auto;
+}
+#InboxMain .addmorebutton,.deletemorebutton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+}
+#InboxMain .addmorebutton:hover,.deletemorebutton:hover{
+    color: #046cbf;
+}
+  
+#InboxMain .deletei:before{
+    font-size: 25px;
+}
+#InboxMain .deletei{
+    margin-left: 5px;
+    cursor: pointer;
+}
+#InboxMain .deletei:hover{
+    color: #ff1100 !important;
+}
+
+#InboxMain .maili {
+    margin-right: 8px;
+    font-size: 25px;
+}
+
+#InboxMain .closei{
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 0px;
+    
+}
+#InboxMain .closei:hover{
+    color: #ff6262 !important;
+}
+
+#InboxMain .closeimage {
+    margin-left: auto;
+}
+#InboxMain .user-select-div {
+
+}
+#InboxMain .toemailrow{
+    border-bottom: 1px solid #9e9e9e;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#InboxMain .user-select-div input{
+    margin-bottom: 0px !important;
+}
+
+
+
+.listItemCotent {
+    overflow-x: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+}
+.fromUserName {
+    min-width: 15%;
+    margin-right: 40px;
+    max-width: 15%;
+}
+.subjectSpan {
+    max-width: 75%;
+    min-width: 25%;
+    margin-right: 15px
+}
+
+.contentD {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    width: 100%
+}
+.profile-image{
+    width: auto !important;
+}
+
+.emailContent {
+    color: #777;
+    margin-right: 15px;
+}
+
+.fromUserName, .subjectSpan, .emailContent {
+    font-weight: 400;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 91.25%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.daynameD {
+    color: #616161;
+    line-height: 24px;
+    margin: 20px 0 8px;
+    padding: 0 24px;
+}
+.collapsible.popout > li.active {
+    margin: 25px 0;
+}
+
+.emptyMailBoxDiv{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 123px 0px;
+}
+.emptyBoxImage i {
+    font-size: 105px;
+    color: #26a69a;
+}
+.emptyBoxContent {
+    font-size: 200%;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #26a69a;
+}
+.innerDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 120px 0px;
+}
+
+
+
+.headerContent{
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+}
+
+.sender-user-image-div {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.sender-user-image {
+    width: 50px;
+    height: 50px;
+}
+.sender-email {
+    padding-bottom: 5px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction:column;
+}
+.sender-email .time{
+    float: right;
+    padding: 0px 10px;
+    color: #757575;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 100%;
+}
+.sender-email .emailTime{
+    margin-left: auto;
+}
+.sender-email-span{
+    color: #212121;
+    font-weight: bold;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 105%;
+    cursor: text;
+}
+.contentD .attachmentinfoicon{
+    font-size: medium !important;
+    color: #757575;
+    line-height: inherit;
+}
+.header-mail-content{
+    width: 100%;
+    overflow: hidden;
+}
+.mailcontent {
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-top: 30px;
+}
+.maincontent-span {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 91.25%;
+}
+.footer{
+    background-color: #f6f6f6;
+    border-top: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+.note-editor.note-frame .note-placeholder {
+    padding: 0px !important;
+}
+.profile-image-of-user{
+    display: flex;
+}
+.replay-profile-image{
+    width: 50px;
+    height: 50px;
+}
+.replayspan {
+    margin: 15px 0px 0px 10px;
+    display: block;
+}
+li.active .listContent {
+    display: none;
+}
+li.active .activeListContent {
+    display: block;
+}
+li .activeListContent {
+    display: none;
+}
+li .listContent {
+    display: flex;
+}
+    
+
+.collapsible-body{
+    background-color: white;
+}
+
+
+.mail-profile-image{
+    width: 40px;
+    height: 40px;
+}
+.profile-img-div{
+    width: 40px;
+    height: 40px;
+    margin: 2px 10px 2px 0px;
+}
+
+
+.file-images-card img{
+    height: 300px;
+    width: 100%;
+}
+.big-image{
+    width: 55%;
+}
+.big-image img {
+    height: 300px;
+    width: 100%;
+    display: block;
+}
+.secondary-image{
+    width : 45%;
+}
+.secondary-image img {
+    height: 150px;
+    width: 100%;
+    display: block;
+}
+.folder-image-div {
+    display: flex;
+    flex-direction: row;
+}
+.file-images-card, .folder-image-card {
+    margin-bottom: 5px;
+}
+
+.senderDetails {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.showmoreul{
+    color: #757575;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 95%;
+    text-overflow: ellipsis;
+}
+
+.folder-name-div, .file-name-div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    display: -webkit-box;
+    max-height: 21px;
+    font: 400 15px/24px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    color: rgba(0,0,0,0.87);
+}
+
+#createMailModel .input-field{
+    margin-top: 0px;
+}
+#createMailModel .row{
+    margin: 0px;
+    padding: 0px;
+}
+
+#createMailModel .col{
+    margin: 0px;
+    padding: 0px;
+}
+
+#MailBoxMain .filesRow{
+    margin: 0px;
+}
+#MailBoxMain .filesRow .file{
+    -webkit-transition: all 500ms; /* Safari */
+    transition: all 500ms;
+}
+#MailBoxMain .filesRow .file:hover .downloadButton {
+    opacity: 1;
+}
+#MailBoxMain .filesRow .file:hover  {
+    background-color: #616161;
+    
+}
+#MailBoxMain .downloadButton{
+        background-color: transparent;
+    cursor: pointer;
+    height: 18px;
+    opacity: 0;
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    top: 0px;
+    width: 18px;
+    display: -webkit-flex;
+    display: flex;
+    left: 0px;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-transition: all 500ms; /* Safari */
+    transition: all 500ms;
+}
+#MailBoxMain .downloadbuttona{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: all 500ms; /* Safari */
+    transition: all 500ms;
+}
+#MailBoxMain .download-attach{
+    color: white;
+    font-size: 30px;
+    -webkit-transition: all 500ms; /* Safari */
+    transition: all 500ms;
+}
+
+.contentD .time{
+    margin-left: auto; 
+    color: #757575;
+    min-width: 15%;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 90%;
+}
+.toSpan, .toUsersList{
+    color: #757575;
+    white-space: nowrap;
+    cursor: text;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 104%;
+}
+
+@media only screen and (max-width: 600px){
+    .listItem {
+        line-height: 1.5rem;
+    }
+    .fromUserName {
+        font-size: 99%;
+    }
+    .mail-profile-image {
+        width: 50px;
+        height: 50px;
+    }
+    .profile-img-div {
+        width: 50px;
+        height: 50px;
+        margin: 8px 10px 8px 0px;
+    }
+    .contentD {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .contentD .time{
+        margin-left: 0px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .contentD span{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;   
+    }
+    .fromUserName {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .subjectSpan {
+        max-width: 100%
+    }
+    li.active .listItem  {
+        line-height: 3rem;
+    }
+}
+    
+    
+    
+@media only screen and (max-width: 600px){
+    #InboxMain .FooterButtons{
+        display: flex;
+        flex-direction: row;
+    }
+    #InboxMain .FooterButtons .note-toolbar{
+        /*display: flex;
+        flex-direction: column;
+        padding: 10px 0px 0px 0px !important;*/
+        display: none;
+    }
+    .FooterButtons .note-toolbar .note-edit{
+        margin-left: 0px !important;
+    }
+    .FooterButtons .delimage{
+        /*margin-left: 0px;
+        border-left: #c1c0c0 solid 1px;*/
+        display: none;
+    }
+    .FooterButtons .sendbutton{
+        margin-right: auto;
+    }
+    #createMailModel .model-content{
+        display: flex;
+    }
+    #createMailModel{
+        max-height: 100% ;
+        height: 100%;
+        width: 100%;
+        top: 0% !important;
+    }
+    #createMailModel .file-attach{
+        border-left: none;
+    }
+    #InboxMain .toemailrow{
+        display: block;
+    }
+    #InboxMain .autocomplete{
+        padding-left: 0px;
+    }
+    #MailAccordian li{
+        margin-left: 0px;
+        margin-right: 0px;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+    }
+    #viewFilePreview .google-document-viewer-iframe{
+        width: 100%;
+        height: 100%;
+    }
+ 
+}
+.ndfHFb-c4YZDc-bnBfGc{
+    background-color: rgba(0,0,0,0.85) !important;
+}

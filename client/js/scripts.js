@@ -1,321 +1,472 @@
-(function ($) {
-	"use strict";
-
-	// Page Loaded...
-	$(document).ready(function () {
-
-		/*==========  Tooltip  ==========*/
-		$('.tool-tip').tooltip();
-		
-		/*==========  Progress Bars  ==========*/
-		$('.progress-bar').on('inview', function (event, isInView) {
-			if (isInView) {
-				$(this).css('width',  function() {
-					return ($(this).attr('aria-valuenow')+'%');
-				});
-			}
-		});
-		$('.dial').on('inview', function (event, isInView) {
-			if (isInView) {
-				var $this = $(this);
-				var myVal = $this.attr("value");
-				var color = $this.attr("data-color");
-				$this.knob({
-					readOnly: true,
-					width: 200,
-					rotation: 'anticlockwise',
-					thickness: .05,
-					inputColor: '#232323',
-					fgColor: color,
-					bgColor: '#e8e8e8',
-					'draw' : function () { 
-						$(this.i).val(this.cv + '%')
-					}
-				});
-				$({
-					value: 0
-				}).animate({
-					value: myVal
-				}, {
-					duration: 1000,
-					easing: 'swing',
-					step: function() {
-						$this.val(Math.ceil(this.value)).trigger('change');
-					}
-				});
-			}
-		});
-
-		/*==========  Alerts  ==========*/
-		$('.alert').on('inview', function (event, isInView) {
-			if (isInView) {
-				$(this).addClass('in');
-			}
-		});
-		$(function() {
-			$('[data-hide]').on('click', function() {
-				$(this).closest('.' + $(this).attr('data-hide')).fadeOut();
+var app = angular.module('Anil', ['ngRoute','ngCookies','ngTouch']);
+app.config(['$routeProvider','$locationProvider','$provide','$sceDelegateProvider',function ($routeProvider,$locationProvider,$provide,$sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'https://drive.google.com/**',
+        'https://www.youtube.com/**',
+        'https://test.payu.in/**',
+        'https://secure.payu.in/**'
+    ]);
+    $routeProvider
+    .when('/home', {
+        templateUrl: '/modules/Home/home.html',
+        controller: 'HomeCtr'
+    })
+    .when('/about', {
+        templateUrl: '/modules/About/about.html',
+        controller: 'AboutCtr'
+    })
+    .when('/skills',{
+        templateUrl: '/modules/Skills/skills.html',
+        controller: 'SkillsCtr'
+    })
+    .when('/education',{
+        templateUrl : '/modules/Education/education.html',
+        controller : 'EducationCtr'
+    })
+    .when('/experience',{
+        templateUrl:'/modules/Experiance/experiance.html',
+        controller:'ExperianceCtr'
+    })
+    .when('/work',{
+        templateUrl : '/modules/Work/work.html',
+        controller : 'WorkCtr'
+    })
+    .when('/contact',{
+        templateUrl : '/modules/Contact/contact.html',
+        controller : 'ContactCtr'
+    })
+    .when('/vehicletracking',{
+        templateUrl : '/modules/Work/vtsweb.html',
+        controller : 'VehicleCtr'
+    })
+    .when('/app/vehicletracking',{
+        templateUrl : '/modules/Work/vtsapp.html',
+        controller : 'VehicleAppCtr'
+    })
+    .when('/hotel',{
+        templateUrl : '/modules/Work/hotelweb.html',
+        controller : 'HotelCtr'
+    })
+    .when('/app/hotel',{
+        templateUrl : '/modules/Work/hotelapp.html',
+        controller : 'HotelAppCtr'
+    })
+    .when('/elearner',{
+        templateUrl : '/modules/Work/smsweb.html',
+        controller : 'ElearnerCtr'
+    })
+    .when('/app/elearner',{
+        templateUrl : '/modules/Work/smsapp.html',
+        controller : 'ElearnerAppCtr'
+    })
+    .when('/fence',{
+        templateUrl : '/modules/Work/fenceweb.html',
+        controller : 'FenceCtr'
+    })
+    .when('/app/fence',{
+        templateUrl : '/modules/Work/fenceapp.html',
+        controller : 'FenceAppCtr'
+    })
+    .when('/lfs',{
+        templateUrl : '/modules/Work/lfs.html',
+        controller : 'LfsCtr'
+    })
+    .otherwise({
+        redirectTo :  '/home'
+    });
+    $locationProvider.html5Mode(true);
+}]);
+app.factory('RootSer',['$http','$rootScope',function($http,$rootScope){
+    var RootSers = {};
+    return RootSers;
+}]);
+var hidePreloader = function(option,callback){
+  	$('body').css('display','block');
+  	$('body').css('justify-content','inherit');
+  	$('body').css('align-items','inherit');
+  	$('body .preloaderdiv').hide();
+  	$("body .overlays-div,body #main").fadeIn(200,callback);
+};
+var showPreloader = function(){
+	$('body').css('display','flex');
+    $('body').css('justify-content','center');
+    $('body').css('align-items','center');
+    $("body .overlays-div,body #main").hide();
+    $('body .preloaderdiv').show();
+};
+app.controller('AnilMain',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+    showPreloader();
+    var showPage = function(){
+        $rootScope.detailsDone = true;
+        $rootScope.$broadcast('DetailsDone');
+    }
+    var init = function(){
+    	showPage();
+        $scope.messageStatus = '';
+        $scope.message = '';
+        $scope.showMessageStatus= false;
+        $scope.sendName = '';
+        $scope.mailMessage = '';
+        $scope.fromEmailId = '';
+        $timeout(function(){
+        	$('.tool-tip').tooltip();
+			$('.main-nav').children().clone().appendTo('.responsive-nav');
+			$('.panel-heading a').on('click', function() {
+				$('.panel-heading').removeClass('active');
+				$(this).parents('.panel-heading').addClass('active');
 			});
-		});
 
-		/*==========  Accordion  ==========*/
-		$('.panel-heading a').on('click', function() {
-			$('.panel-heading').removeClass('active');
-			$(this).parents('.panel-heading').addClass('active');
-		});
+        });
+    };
+    var validateEmail= function ($validate_email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        if( !emailReg.test( $validate_email ) ) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
 
-		/*==========  Responsive Navigation  ==========*/
-		$('.main-nav').children().clone().appendTo('.responsive-nav');
-		$('.responsive-menu-open').on('click', function(event) {
-			event.preventDefault();
-			$('body').addClass('no-scroll');
-			$('.responsive-menu').addClass('open');
-		});
-		$('.responsive-menu-close').on('click', function(event) {
-			event.preventDefault();
-			$('body').removeClass('no-scroll');
-			$('.responsive-menu').removeClass('open');
-		});
+    $scope.inputFocused = function(){
+        $('.errorName').hide();
+    }
+    
+    $scope.sendMessage = function() {
+        var valid = true;
+        if(!$scope.sendName.replace(/\s/g, '').length){
+            var html = 'Please enter your name';
+            $('#SendName-error,.errorNameSendName').addClass('error');
+            $('#SendName-error').text(html);
+            $('.errorNameSendName').show();
+            valid = false;
+        }
+        if(!$scope.mailMessage.replace(/\s/g, '').length){
+            var html = 'Please enter your message.';
+            $('#MailMessage-error,.errorNameMailMessage').addClass('error');
+            $('#MailMessage-error').text(html);
+            $('.errorNameMailMessage').show();
+            valid = false;
+        }
+        if(!$scope.fromEmailId.replace(/\s/g, '').length){
+            var html = 'Please enter your email id';
+            $('#FromEmailId-error,.errorNameFromEmailId').addClass('error');
+            $('#FromEmailId-error').text(html);
+            $('.errorNameFromEmailId').show();
+            valid = false;
+        }else{
+            if(!validateEmail($scope.fromEmailId)){
+                var html = 'Please enter valid email id';
+                $('#FromEmailId-error,.errorNameFromEmailId').addClass('error');
+                $('#FromEmailId-error').text(html);
+                $('.errorNameFromEmailId').show();
+                valid = false;
+            }
+        }
+        if(valid){
 
-		/*==========  Popup  ==========*/
-		$('.share').on('click', function(event) {
-			event.preventDefault();
-			$('.popup').fadeToggle(250);
-		});
-		$('.slide-out-share').on('click', function(event) {
-			event.preventDefault();
-			$('.slide-out-popup').fadeToggle(250);
-		});
+            $scope.message ="Mail Sending.";
+            $scope.showMessageStatus = true;
+            $scope.messageStatus = "INITIATED";
+            var url='/api/sendmail';
+            var d = {'sendName':$scope.sendName,'fromEmailId':$scope.fromEmailId,'mailMessage':$scope.mailMessage};
+            $http({
+                method: 'POST',
+                url: url,
+                data:d
+            }).then(function successCallback(response) {
+                $scope.sendName = '';
+                $scope.mailMessage = '';
+                $scope.fromEmailId = '';
+                $scope.message ="Mail Received, Thank you.";
+                $scope.showMessageStatus = true;
+                $scope.messageStatus = "SUCCESS";
+                $timeout(function(){
+                    $scope.message = '';
+                    $scope.showMessageStatus = false;
+                    $scope.messageStatus="NOTSTART";
+                },5000,true);
+            },function errorCallback(response) {
+                $scope.sendName = '';
+                $scope.mailMessage = '';
+                $scope.fromEmailId = '';
+                $scope.message ="Sorry my bad, please try again.";
+                $scope.showMessageStatus = true;
+                $scope.messageStatus = "FAILED";
+                $timeout(function(){
+                    $scope.message = '';
+                    $scope.showMessageStatus = false;
+                    $scope.messageStatus="NOTSTART";
+                },5000,true);
+            });
+        }
+    };
 
-		/*==========  Slide Out  ==========*/
-		$('.header-action-button').on('click', function(event) {
-			event.preventDefault();
-			$('.slide-out-overlay').fadeIn(250);
-			$('.slide-out').addClass('open');
-		});
-		$('.slide-out-close').on('click', function(event) {
-			event.preventDefault();
-			$('.slide-out-overlay').fadeOut(250);
-			$('.slide-out').removeClass('open');
-		});
-		$('.slide-out-overlay').on('click', function(event) {
-			event.preventDefault();
-			$('.slide-out-overlay').fadeOut(250);
-			$('.slide-out').removeClass('open');
-		});
+    $scope.openResponsiveMenu = function(){
+    	$('body').addClass('no-scroll');
+		$('.responsive-menu').addClass('open');
+    }
 
-		/*==========  Search  ==========*/
-		function positionSearch() {
-			if ($(window).width() > $(window).height()) {
-				var windowWidth = $(window).width();
-				$('.search-overlay').css({'width': windowWidth*2.5, 'height': windowWidth*2.5});
-			} else {
-				var windowHeight = $(window).height();
-				$('.search-overlay').css({'width': windowHeight*2.5, 'height': windowHeight*2.5});
-			}
-			var position = $('.header-open-search').offset();
-			var height = $('.header-open-search').height();
-			var width = $('.header-open-search').width();
-			var top = position.top + height/2 - $('.search-overlay').outerHeight()/2;
-			var left = position.left - width/2 - $('.search-overlay').outerWidth()/2;
-			$('.search-overlay').css({'top': top, 'left': left});
-		}
-		positionSearch();
-		$(window).on('resize', function() {
-			positionSearch();
-		});
-		$('.open-search').on('click', function(event) {
-			event.preventDefault();
-			$('.search-overlay').addClass('scale');
-			$('.search').addClass('open');
-		});
-		$('.search-close').on('click', function(event) {
-			event.preventDefault();
-			$('.search-overlay').removeClass('scale');
-			$('.search').removeClass('open');
-		});
+    $scope.closeResponsiveMenu = function(){
+    	$('body').removeClass('no-scroll');
+		$('.responsive-menu').removeClass('open');
+    }
 
-		/*==========  Portfolio  ==========*/
-		var $portfolioContainer = $('#portfolio').imagesLoaded(function() {
-			$portfolioContainer.isotope({
-				itemSelector: '.item',
-				layoutMode: 'masonry'
-			});
-			horizontalSections();
-		});
-		$('#portfolio-filters').on('click', 'button', function() {
-			var filterValue = $(this).attr('data-filter');
-			$portfolioContainer.isotope({filter: filterValue});
-		});
-
-		/*==========  Blog  ==========*/
-		var $blogContainer = $('#blog-masonry').imagesLoaded(function() {
-			$blogContainer.isotope({
-				itemSelector: '.blog-post',
-				layoutMode: 'masonry',
-				masonry: {
-					columnWidth: $blogContainer.find('.blog-grid-sizer')[0]
+    $scope.sharePopup = function(){
+		$('.popup').fadeToggle(250);
+    };
+    $scope.slideOutShare = function(){
+    	$('.slide-out-popup').fadeToggle(250);
+    };
+    $scope.headerActionButton = function(){
+		$('.slide-out-overlay').fadeIn(250);
+		$('.slide-out').addClass('open');
+    };
+    $scope.slideOutClose = function(){
+    	$('.slide-out-overlay').fadeOut(250);
+		$('.slide-out').removeClass('open');
+    };
+    $scope.slideOutOverlay = function(){
+    	$('.slide-out-overlay').fadeOut(250);
+		$('.slide-out').removeClass('open');
+    };
+	
+    init();
+}]);
+app.controller('HomeCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+    showPreloader();
+    $('nav li ').removeClass('active');
+    $('nav li.home').addClass('active');
+    var init = function(){
+    	hidePreloader();
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);
+app.controller('AboutCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+    showPreloader();
+    $('nav li ').removeClass('active');
+    $('nav li.about').addClass('active');
+    var init = function(){
+    	hidePreloader();
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);
+app.controller('SkillsCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+    showPreloader();
+    $('nav li ').removeClass('active');
+    $('nav li.skills').addClass('active');
+    var init = function(){
+    	hidePreloader({},function(){
+    		$('.progress-bar').on('inview', function (event, isInView) {
+				if (isInView) {
+					$(this).css('width',  function() {
+						return ($(this).attr('aria-valuenow')+'%');
+					});
 				}
 			});
-			horizontalSections();
-		});
-
-		/*==========  Horizontal Scroll  ==========*/
-		var hash = window.location.hash;
-		var url = 1;
-		var count = $('.sections-wrapper section').length;
-		if (location.hash) {
-			setTimeout(function() {
-				window.scrollTo(0, 0);
-			}, 1);
-			slide('link');
-		}
-		function horizontalSections() {
-			var vWidth = $(window).width();
-			var vheight = $(window).height();
-			$('.sections-wrapper > section').css('width', vWidth);
-			$('.sections-wrapper').css('width', vWidth * count).css('height', $('.sections-wrapper section.active').outerHeight());
-		}
-		function disableButtons(url) {
-			if (url == count) {
-				$('.section-nav a.forward').addClass('disabled');
-				$('.section-nav a.backward').removeClass('disabled');
-			} else if (url == 1) {
-				$('.section-nav a.backward').addClass('disabled');
-				$('.section-nav a.forward').removeClass('disabled');
-			} else {
-				$('.section-nav a.forward').removeClass('disabled');
-				$('.section-nav a.backward').removeClass('disabled');
-			}
-		}
-		function slide($type, $this) {
-			if ($type == 'forward') {
-				url = url+1;
-				$this.attr({ href: '#section' + url });
-				$this.parent().attr({ class: 'section' + url });
-			} else if ($type == 'backward') {
-				url = url-1;
-				$this.attr({ href: '#section' + url });
-				$this.parent().attr({ class: 'section' + url });
-			} else if ($type == 'mainNav') {
-				var sectionNum = $this.attr('href');
-				sectionNum = sectionNum.replace( /[^\d.]/g, '' );
-				sectionNum = parseInt(sectionNum, 10);
-				url = sectionNum;
-			} else if ($type == 'link') {
-				var sectionNum = hash;
-				sectionNum = sectionNum.replace( /[^\d.]/g, '' );
-				sectionNum = parseInt(sectionNum, 10);
-				url = sectionNum;
-			}
-			$('.sections-wrapper section').removeClass('active');
-			$('.main-nav .active').removeClass('active');
-			$('.responsive-nav .active').removeClass('active');
-			$('#section'+url).addClass('active');
-			$('.main-nav a[href="#section'+url+'"]').parent().addClass('active');
-			$('.responsive-nav a[href="#section'+url+'"]').parent().addClass('active');
-			$('.sections-wrapper').css('height', $('.sections-wrapper section.active').outerHeight());
-			disableButtons(url);
-		}
-		horizontalSections();
-		$(window).on('resize', function() {
-			horizontalSections();
-		});
-		disableButtons(url);
-		$('.section-nav a.forward').on('click', function() {
-			slide('forward', $(this));
-		});
-		$('.section-nav a.backward').on('click', function() {
-			slide('backward', $(this));
-		});
-		$('.main-nav a').on('click', function() {
-			slide('mainNav', $(this));
-		});
-		$('.responsive-nav a').on('click', function() {
-			slide('mainNav', $(this));
-			$('body').removeClass('no-scroll');
-			$('.responsive-menu').removeClass('open');
-		});
-		$('.available').on('click', function() {
-			slide('mainNav', $(this));
-		});
-		$('a.forward, .section-nav a.backward, .main-nav a, .responsive-nav a, .available').smoothScroll();
-
-		/*==========  Testimonial Slider  ==========*/
-		$('.testimonial-slider').owlCarousel({
-			items: 1,
-			autoplay: true,
-			loop: true
-		});
-
-		/*==========  Portfolio Slider  ==========*/
-		$('.portfolio-slider').owlCarousel({
-			items: 1,
-			autoplay: true,
-			loop: true,
-			nav: true,
-			navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-			dots: false
-		});
-
-	});
+			$('.dial').on('inview', function (event, isInView) {
+				if (isInView) {
+					var $this = $(this);
+					var myVal = $this.attr("value");
+					var color = $this.attr("data-color");
+					$this.knob({
+						readOnly: true,
+						width: 200,
+						rotation: 'anticlockwise',
+						thickness: .05,
+						inputColor: '#232323',
+						fgColor: color,
+						bgColor: '#e8e8e8',
+						'draw' : function () { 
+							$(this.i).val(this.cv + '%')
+						}
+					});
+					$({
+						value: 0
+					}).animate({
+						value: myVal
+					}, {
+						duration: 1000,
+						easing: 'swing',
+						step: function() {
+							$this.val(Math.ceil(this.value)).trigger('change');
+						}
+					});
+				}
+			});
+    	});
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);
+app.controller('EducationCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+    showPreloader();
+    $('nav li ').removeClass('active');
+    $('nav li.edu').addClass('active');
+    var init = function(){
+    	hidePreloader();
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);
+app.controller('ExperianceCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+    showPreloader();
+    $('nav li ').removeClass('active');
+    $('nav li.experience').addClass('active');
+    var init = function(){
+    	hidePreloader();
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);
+app.controller('WorkCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+	showPreloader();
+	$('nav li ').removeClass('active');
+    $('nav li.work').addClass('active');
 	
-	/*==========  Validate Email  ==========*/
-	function validateEmail($validate_email) {
+    var init = function(){
+    	hidePreloader({},function(){
+    		$scope.$portfolioContainer = $('#portfolio').imagesLoaded(function() {
+				$scope.$portfolioContainer.isotope({
+					itemSelector: '.item',
+					layoutMode: 'masonry'
+				});
+			});
+			$('#portfolio-filters').on('click', 'button', function() {
+				var filterValue = $(this).attr('data-filter');
+				$scope.$portfolioContainer.isotope({filter: filterValue});
+			});
+	        $('.portfolio-slider').owlCarousel({
+				items: 1,
+				autoplay: true,
+				loop: true,
+				nav: true,
+				navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+				dots: false
+			});
+    	});
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);
+app.controller('ContactCtr',['$scope','$rootScope','$http','$location','$window','$cookies','$timeout','RootSer','$route',function($scope,$rootScope,$http,$window,$location,$cookies,$timeout,RootSer,$route){
+	showPreloader();
+	$('nav li ').removeClass('active');
+    $('nav li.contact').addClass('active');
+	var validateEmail= function ($validate_email) {
 		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 		if( !emailReg.test( $validate_email ) ) {
 			return false;
 		} else {
 			return true;
 		}
-	}
-	
-	/*==========  Contact Form  ==========*/
-	$('.contact-form').on('submit', function() {
-		var contactForm = $(this);
-		contactForm.find('.contact-error').fadeOut();
-		contactForm.find('.contact-success').fadeOut();
-		contactForm.find('.contact-loading').fadeOut();
-		contactForm.find('.contact-loading').fadeIn();
-		if (validateEmail(contactForm.find('.contact-email').val()) && contactForm.find('.contact-email').val().length !== 0 && contactForm.find('.contact-name').val().length !== 0 && contactForm.find('.contact-message').val().length !== 0) {
-			var action = contactForm.attr('action');
-			$.ajax({
-				type: "POST",
-				url : action,
-				data: {
-					contact_name: contactForm.find('.contact-name').val(),
-					contact_email: contactForm.find('.contact-email').val(),
-					contact_message: contactForm.find('.contact-message').val()
-				},
-				success: function() {
-					contactForm.find('.contact-loading').fadeOut();
-					contactForm.find('.contact-success').find('.message').html('Success! Thanks for contacting us!');
-					contactForm.find('.contact-success').fadeIn();
-				},
-				error: function() {
-					contactForm.find('.contact-loading').fadeOut();
-					contactForm.find('.contact-error').find('.message').html('Sorry, an error occurred.');
-					contactForm.find('.contact-error').fadeIn();
-				}
-			});
-		} else if (!validateEmail(contactForm.find('.contact-email').val()) && contactForm.find('.contact-email').val().length !== 0 && contactForm.find('.contact-name').val().length !== 0 && contactForm.find('.contact-message').val().length !== 0) {
-			contactForm.find('.contact-error').fadeOut();
-			contactForm.find('.contact-success').fadeOut();
-			contactForm.find('.contact-loading').fadeOut();
-			contactForm.find('.contact-error').find('.message').html('Please enter a valid email.');
-			contactForm.find('.contact-error').fadeIn();
-		} else {
-			contactForm.find('.contact-error').fadeOut();
-			contactForm.find('.contact-success').fadeOut();
-			contactForm.find('.contact-loading').fadeOut();
-			contactForm.find('.contact-error').find('.message').html('Please fill out all the fields.');
-			contactForm.find('.contact-error').fadeIn();
-		}
-		return false;
-	});
+	} 
 
-	/*==========  Map  ==========*/
-	var map;
+    $scope.inputFocused = function(){
+        $('.errorName').hide();
+    }
+	
+	$scope.sendMessage = function() {
+		var valid = true;
+        if(!$scope.sendName.replace(/\s/g, '').length){
+            var html = 'Please enter your name';
+            $('#SendName-error,.errorNameSendName').addClass('error');
+            $('#SendName-error').text(html);
+            $('.errorNameSendName').show();
+            valid = false;
+        }
+        if(!$scope.mailMessage.replace(/\s/g, '').length){
+            var html = 'Please enter your message.';
+            $('#MailMessage-error,.errorNameMailMessage').addClass('error');
+            $('#MailMessage-error').text(html);
+            $('.errorNameMailMessage').show();
+            valid = false;
+        }
+        if(!$scope.fromEmailId.replace(/\s/g, '').length){
+            var html = 'Please enter your email id';
+            $('#FromEmailId-error,.errorNameFromEmailId').addClass('error');
+            $('#FromEmailId-error').text(html);
+            $('.errorNameFromEmailId').show();
+            valid = false;
+        }else{
+            if(!validateEmail($scope.fromEmailId)){
+                var html = 'Please enter valid email id';
+                $('#FromEmailId-error,.errorNameFromEmailId').addClass('error');
+                $('#FromEmailId-error').text(html);
+                $('.errorNameFromEmailId').show();
+                valid = false;
+            }
+        }
+        if(valid){
+            $scope.message ="Mail Sending.";
+            $scope.showMessageStatus = true;
+            $scope.messageStatus = "INITIATED";
+            var url='/api/sendmail';
+            var d = {'sendName':$scope.sendName,'fromEmailId':$scope.fromEmailId,'mailMessage':$scope.mailMessage};
+            $http({
+                method: 'POST',
+                url: url,
+                data:d
+            }).then(function successCallback(response) {
+                $scope.sendName = '';
+                $scope.mailMessage = '';
+                $scope.fromEmailId = '';
+                $scope.message ="Mail Received, Thank you.";
+                $scope.showMessageStatus = true;
+                $scope.messageStatus = "SUCCESS";
+                $timeout(function(){
+                    $scope.message = '';
+                    $scope.showMessageStatus = false;
+                    $scope.messageStatus="NOTSTART";
+                },5000,true);
+            },function errorCallback(response) {
+                $scope.sendName = '';
+                $scope.mailMessage = '';
+                $scope.fromEmailId = '';
+                $scope.message ="Sorry my bad, please try again.";
+                $scope.showMessageStatus = true;
+                $scope.messageStatus = "FAILED";
+                $timeout(function(){
+                    $scope.message = '';
+                    $scope.showMessageStatus = false;
+                    $scope.messageStatus="NOTSTART";
+                },5000,true);
+            });
+        }
+	};
+	$scope.map = '';
 	function initialize_map() {
 		if ($('.map').length) {
 			var myLatLng = new google.maps.LatLng(17.490431,78.401628);
@@ -339,7 +490,23 @@
 		} else {
 			return false;
 		}
-	}
-	google.maps.event.addDomListener(window, 'load', initialize_map);
-
-})(jQuery);
+	};
+    var init = function(){
+        $scope.messageStatus = '';
+        $scope.message = '';
+        $scope.showMessageStatus= false;
+        $scope.sendName = '';
+        $scope.mailMessage = '';
+        $scope.fromEmailId = '';
+        hidePreloader({},function(){
+        	initialize_map();
+        });
+    };
+    if($rootScope.detailsDone){
+        $timeout(init,0,true);
+    }else{
+        $scope.DetailDoneEvent = $scope.$on('DetailsDone',function(event,data){
+                                    $timeout(init,0,true);
+                                });
+    };
+}]);

@@ -3,7 +3,10 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var app = module.exports = loopback();
-
+var multer = require('multer');
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit:10000})); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true,limit:10000})); // for parsing application/x-www-form-urlencoded
 app.start = function() {
     return app.listen(function() {
         app.emit('started');

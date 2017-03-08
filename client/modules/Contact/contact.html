@@ -1,0 +1,66 @@
+<link href="./modules/Contact/contact.css" type="text/css" rel="stylesheet" media="screen,projection">
+<section id="Contact">
+    <div class="container">
+        <h2>Get In Touch With Me</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <h5>Contact Address</h5>
+                <ul class="list-icons list-unstyled">
+                    <li><i class="ion-ios-location-outline"></i>MIG-56,KPHB Road No-1, Kukatpally, Hyderabad,Telangana,India-500084</li>
+                    <li><i class="ion-iphone"></i>Phone: +91-888-656-0888</li>
+                    <li><i class="ion-ios-email-outline"></i>Email: <a href="mailto:anilkusuma.k@gmail.com">anilkusuma.k@gmail.com</a></li>
+                    <li><i class="ion-ios-home-outline"></i>Website: <a href="">contact@anilkusuma.com</a></li>
+                </ul>
+                <div class="spacer"></div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/anilkusuma.k" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/anilnitw" target="_blank" class="social-icon"><i class="fa fa-twitter"></i></a>
+                    <a class="social-icon"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://www.linkedin.com/in/kusumaanil/" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <div class="spacer"></div>
+            </div>
+            <div class="col-sm-7">
+                <h5>Contact Form</h5>
+                <div  class="form-horizontal contact-form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="contact-name" name="contact-name" ng-model="sendName" ng-focus="inputFocused()"/>
+                            <div class="errorName errorNameSendName">
+                                <div id="SendName-error"></div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="contact-email" name="contact-email" ng-model="fromEmailId" ng-focus="inputFocused()" />
+                            <div class="errorName errorNameFromEmailId">
+                                <div id="FromEmailId-error"></div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Message</label>
+                        <div class="col-sm-10">
+                            <textarea name="contact-message" class="contact-message" ng-model="mailMessage" rows="3" ng-focus="inputFocused()"></textarea>
+                            <div class="errorName errorNameMailMessage">
+                                <div id="MailMessage-error"></div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <button class="button solid-button purple" ng-click="sendMessage()">Send Message</button>
+                        </div>
+                    </div>
+                    <div class="contact-loading" ng-if="showMessageStatus">
+                        <span class="message {{messageStatus}}" >{{message}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map" id="map"></div>
+    </div>
+</section>
