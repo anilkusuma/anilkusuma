@@ -1546,13 +1546,22 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 /* ==========================================================================
    17. Portfolio
    ========================================================================== */
+.portspan{
+	font-size: small;
+    color: #585858;
+    letter-spacing: 1px;
+    max-width: 85%;
+}
+.copyright{
+	margin-top: 10px;
+    color: #4f4f4f;
+}
 .portfolio-wrapper {
 	position: relative;
 }
 .portfolio-filters {
-	position: absolute;
-	top: -86px;
-	right: 0;
+	text-align: right;
+    padding-top: 50px;
 }
 .portfolio-filters .button {
 	margin-left: 20px;
