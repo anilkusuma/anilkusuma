@@ -8,7 +8,7 @@ app.config(['$routeProvider','$locationProvider','$provide','$sceDelegateProvide
         'https://secure.payu.in/**'
     ]);
     $routeProvider
-    .when('/home', {
+    .when('/', {
         templateUrl: '/modules/Home/home.html',
         controller: 'HomeCtr'
     })
@@ -73,7 +73,7 @@ app.config(['$routeProvider','$locationProvider','$provide','$sceDelegateProvide
         controller : 'LfsCtr'
     })
     .otherwise({
-        redirectTo :  '/home'
+        redirectTo :  '/'
     });
     $locationProvider.html5Mode(true);
 }]);
