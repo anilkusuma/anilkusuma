@@ -78,5 +78,8 @@ module.exports = function(server) {
 	    	return;
 		}
     });
+    router.get('/api/downloadresume',function(req,res){
+    	res.download('../client/AnilKusumaResume.pdf');
+    });
     server.use(router);
 };
