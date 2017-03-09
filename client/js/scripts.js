@@ -353,12 +353,12 @@ app.controller('WorkCtr',['$scope','$rootScope','$http','$location','$window','$
 	
     var init = function(){
     	hidePreloader({},function(){
-    		$scope.$portfolioContainer = $('#portfolio');//.imagesLoaded(function() {
-			$scope.$portfolioContainer.isotope({
-				itemSelector: '.item',
-				layoutMode: 'masonry'
+    		$scope.$portfolioContainer = $('#portfolio').imagesLoaded(function() {
+        		$scope.$portfolioContainer.isotope({
+        			itemSelector: '.item',
+        			layoutMode: 'masonry'
+        		});
 			});
-			//});
 			$('#portfolio-filters').on('click', 'button', function() {
 				var filterValue = $(this).attr('data-filter');
 				$scope.$portfolioContainer.isotope({filter: filterValue});
