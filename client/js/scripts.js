@@ -402,30 +402,30 @@ app.controller('ContactCtr',['$scope','$rootScope','$http','$location','$window'
 		var valid = true;
         if(!$scope.sendName.replace(/\s/g, '').length){
             var html = 'Please enter your name';
-            $('#SendName-error,.errorNameSendName').addClass('error');
-            $('#SendName-error').text(html);
-            $('.errorNameSendName').show();
+            $('#CSendName-error,.errorNameCSendName').addClass('error');
+            $('#CSendName-error').text(html);
+            $('.errorNameCSendName').show();
             valid = false;
         }
         if(!$scope.mailMessage.replace(/\s/g, '').length){
             var html = 'Please enter your message.';
-            $('#MailMessage-error,.errorNameMailMessage').addClass('error');
-            $('#MailMessage-error').text(html);
-            $('.errorNameMailMessage').show();
+            $('#CMailMessage-error,.errorNameCMailMessage').addClass('error');
+            $('#CMailMessage-error').text(html);
+            $('.errorNameCMailMessage').show();
             valid = false;
         }
         if(!$scope.fromEmailId.replace(/\s/g, '').length){
             var html = 'Please enter your email id';
-            $('#FromEmailId-error,.errorNameFromEmailId').addClass('error');
-            $('#FromEmailId-error').text(html);
-            $('.errorNameFromEmailId').show();
+            $('#CFromEmailId-error,.errorNameCFromEmailId').addClass('error');
+            $('#CFromEmailId-error').text(html);
+            $('.errorNameCFromEmailId').show();
             valid = false;
         }else{
             if(!validateEmail($scope.fromEmailId)){
                 var html = 'Please enter valid email id';
-                $('#FromEmailId-error,.errorNameFromEmailId').addClass('error');
-                $('#FromEmailId-error').text(html);
-                $('.errorNameFromEmailId').show();
+                $('#CFromEmailId-error,.errorNameCFromEmailId').addClass('error');
+                $('#CFromEmailId-error').text(html);
+                $('.errorNameCFromEmailId').show();
                 valid = false;
             }
         }

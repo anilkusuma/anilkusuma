@@ -204,8 +204,10 @@ h3.small-margin-bottom {
 	margin-top: 72px;
 }
 .errorName .error{
-	font-size: x-small;
+	font-size: 10px;
     color: #be0000;
+    position: relative;
+    bottom: 5px;
 }
 .contact-loading{
 	text-align: center;
